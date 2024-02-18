@@ -7,7 +7,7 @@ class Solution:
                     if [i] < [j] < [k]:
                         if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
                             triplets.append((i, j, k))
-        return triplets
+        return len(triplets)
 
 
 solution = Solution()
@@ -17,10 +17,4 @@ diff = 3
 
 output = solution.arithmeticTriplets(nums, diff)
 
-output_count = 0
-
-for item in output:
-    if isinstance(item, tuple):
-        output_count += 1
-
-print(output_count)
+print(output)
