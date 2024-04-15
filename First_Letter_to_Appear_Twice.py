@@ -37,3 +37,15 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        char_count = {}
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        for char in s:
+            if char_count[char] == 2:
+                return char
+
+
+s = "LeetCode"
+solution = Solution()
+repeated_char = solution.repeatedCharacter(s)
+print(repeated_char)
