@@ -24,3 +24,30 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: float
         """
+        # Merge the two arrays.
+        merged_nums = nums1 + nums2
+        # Sort the merged array.
+        sorted_nums = sorted(merged_nums)
+        # Get the length of the merged array.
+        length = len(sorted_nums)
+
+        # Handle the case where the merged array is empty.
+        if length == 0:
+            return 0.0
+        # Handle the case where the merged array has even length.
+        elif length % 2 == 0:
+            index = length // 2
+            # Calculate the average of the two middle elements.
+            return (sorted_nums[index] + sorted_nums[index - 1]) / 2.0
+        # Handle the case where the merged array has odd length.
+        else:
+            index = length // 2
+            # Return the middle element directly.
+            return float(sorted_nums[index])
+
+
+nums1 = [1, 2]
+nums2 = [3, 4]
+solution = Solution()
+median = solution.findMedianSortedArrays(nums1, nums2)
+print(median)
