@@ -24,12 +24,18 @@ class Solution(object):
         :rtype: int
         """
         num = str(x)
+        output = 0
         if num[0] == "-":
             reversed_num = "-" + num[:0:-1]
+            output = int(reversed_num)
         else:
             reversed_num = num[::-1]
+            output = int(reversed_num)
 
-        return int(reversed_num)
+        if output < -2**31 or output > 2**31 - 1:
+            return 0
+        else:
+            return output
 
 
 x = -123
