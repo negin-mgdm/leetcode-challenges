@@ -23,3 +23,15 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        num = str(x)
+        if num[0] == "-":
+            reversed_num = "-" + num[:0:-1]
+        else:
+            reversed_num = num[::-1]
+
+        return int(reversed_num)
+
+
+x = -123
+solution = Solution()
+print(solution.reverse(x))
