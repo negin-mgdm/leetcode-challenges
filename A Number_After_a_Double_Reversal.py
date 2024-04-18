@@ -31,3 +31,23 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
+        num_str = str(num)
+        # Reverse the string representation of the number and remove leading and trailing zeros.
+        reversed_num = num_str[::-1].strip('0')
+        # Get the lengths of the original number and its reverse.
+        num_length = int(len(num_str))
+        reversed_num_length = int(len(reversed_num))
+
+        # Check if the lengths are equal.
+        if num_length == reversed_num_length:
+            return
+        # Check if the original number is the same as its reverse.
+        elif num_str == str(num_str[::-1]):
+            return True
+        else:
+            return False
+
+
+num = 1300
+solution = Solution()
+print(solution.isSameAfterReversals(num))
