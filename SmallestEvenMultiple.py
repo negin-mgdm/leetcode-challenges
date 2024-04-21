@@ -23,3 +23,12 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        if n % 2 == 0:
+            return n
+        else:
+            return n*2
+
+
+n = 11
+solution = Solution()
+print(solution.smallestEvenMultiple(n))
