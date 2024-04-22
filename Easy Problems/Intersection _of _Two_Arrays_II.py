@@ -21,3 +21,19 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
+        intersect_nums = []
+        num_count = {}
+        for num in nums1:
+            num_count[num] = num_count.get(num, 0) + 1
+        for num in nums2:
+            if num in num_count and num_count[num] > 0:
+                intersect_nums.append(num)
+                num_count[num] = num_count[num] - 1
+
+        return intersect_nums
+
+
+nums1 = [1, 2, 2, 1]
+nums2 = [2]
+solution = Solution()
+print(solution.intersect(nums1, nums2))
