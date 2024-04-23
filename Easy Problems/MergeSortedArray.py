@@ -38,3 +38,17 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
+        nums1_range = [num for num in nums1[:m]]
+        nums2_range = [num for num in nums2[:n]]
+        merged_nums = nums1_range + nums2_range
+        merged_nums.sort()
+        nums1[:m + n] = merged_nums
+        return merged_nums
+
+
+nums1 = [-1, 0, 2, 3, 0, 0, 0]
+nums2 = [2, 5, 6]
+m = 3
+n = 3
+solution = Solution()
+print(solution.merge(nums1, m, nums2, n))
