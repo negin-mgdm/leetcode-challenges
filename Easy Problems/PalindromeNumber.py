@@ -26,3 +26,14 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        num = str(x)
+        reversed_num = num[::-1]
+        if num == reversed_num:
+            return True
+        else:
+            return False
+
+
+x = -121
+solution = Solution()
+print(solution.isPalindrome(x))
