@@ -53,6 +53,6 @@ class Solution(object):
         return max_length
 
 
-s = ")()()("
+s = ")("
 solution = Solution()
 print(solution.longestValidParentheses(s))
