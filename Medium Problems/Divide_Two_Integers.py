@@ -30,3 +30,18 @@ class Solution(object):
         :type divisor: int
         :rtype: int
         """
+        max_int32 = 2**31 - 1
+        min_int32 = -2**31
+        division = dividend/divisor
+        if division > max_int32:
+            return max_int32
+        elif division < min_int32:
+            return min_int32
+        else:
+            return int(division)
+
+
+dividend = -2147483648
+divisor = -1
+solution = Solution()
+print(solution.divide(dividend, divisor))
