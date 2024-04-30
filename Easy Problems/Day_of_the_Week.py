@@ -21,6 +21,8 @@ Input: day = 15, month = 8, year = 1993
 Output: "Sunday"
 '''
 
+import calendar
+
 
 class Solution(object):
     def dayOfTheWeek(self, day, month, year):
@@ -30,3 +32,13 @@ class Solution(object):
         :type year: int
         :rtype: str
         """
+        day_of_week = calendar.weekday(year, month, day)
+        day_name = calendar.day_name[day_of_week]
+        return day_name
+
+
+day = 18
+month = 7
+year = 1999
+solution = Solution()
+print(solution.dayOfTheWeek(day, month, year))
