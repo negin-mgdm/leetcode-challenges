@@ -24,8 +24,13 @@ Three values were passed to the function so it should return 3.
  */
 var argumentsLength = function (...args) {
 
+    let argsLength = args.length;
+    return argsLength;
 };
 
 /**
  * argumentsLength(1, 2, 3,); // 3
  */
+
+
+console.log(argumentsLength({}, null, "3"));
