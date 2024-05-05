@@ -26,3 +26,19 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        result = [-1, -1]
+        for i, num in enumerate(nums):
+            if num == target:
+                result[0] = i
+                break
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] == target:
+                result[1] = i
+                break
+        return result
+
+
+nums = [5, 7, 7, 8, 8, 10]
+target = 8
+solution = Solution()
+print(solution.searchRange(nums, target))
