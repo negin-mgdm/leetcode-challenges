@@ -29,3 +29,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        smaller_num = []
+        for i in range(len(nums)):
+            count = 0
+            for j in range(len(nums)):
+                if nums[j] < nums[i]:
+                    count += 1
+            smaller_num.append(count)
+
+        return smaller_num
+
+
+nums = [6, 5, 4, 8]
+solution = Solution()
+print(solution.smallerNumbersThanCurrent(nums))
