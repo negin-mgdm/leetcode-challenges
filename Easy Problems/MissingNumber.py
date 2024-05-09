@@ -27,3 +27,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        sorted_nums = sorted(nums)
+        length = len(sorted_nums)
+        # if first number is not 0, zero is missing.
+        if sorted_nums[0] != 0:
+            return 0
+        for i in range(length - 1):
+            if sorted_nums[i+1] - sorted_nums[i] != 1:
+                return sorted_nums[i] + 1
+        # If no missing number is found, return a default value.
+        return sorted_nums[-1] + 1
+
+
+nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]
+solution = Solution()
+print(solution.missingNumber(nums))
