@@ -18,3 +18,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        count = {}
+        for num in nums:
+            if num in count:
+                count[num] += 1
+            else:
+                count[num] = 1
+        for num in nums:
+            if count.get(num) == 3:
+                pass
+            elif count.get(num) == 1:
+                return num
+
+
+nums = [0, 1, 0, 1, 0, 1, 99]
+solution = Solution()
+print(solution.singleNumber(nums))
