@@ -22,3 +22,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        count = {}
+        for num in nums:
+            if num in count:
+                count[num] += 1
+            else:
+                count[num] = 1
+        for num in nums:
+            if count.get(num) == 1:
+                return num
+
+
+nums = [4, 1, 2, 1, 2]
+solution = Solution()
+print(solution.singleNumber(nums))
