@@ -26,3 +26,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        return nums * 2     # Or return nums + nums
+
+
+nums = [1, 3, 2, 1]
+solution = Solution()
+print(solution.getConcatenation(nums))
