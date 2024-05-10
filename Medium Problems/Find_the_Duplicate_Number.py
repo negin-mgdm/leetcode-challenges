@@ -22,3 +22,37 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        count = {}
+        for num in nums:
+            if num in count:
+                count[num] += 1
+            else:
+                count[num] = 1
+        for num in nums:
+            if count.get(num) >= 2:
+                return num
+
+
+nums = [3, 1, 3, 4, 2]
+solution = Solution()
+print(solution.findDuplicate(nums))
+
+
+# SOLUTION NUMBER 2 :
+
+class Solution(object):
+    def findDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        length = len(nums)
+        for i in range(length):
+            for j in range(length):
+                if i != j and nums[i] == nums[j]:
+                    return nums[i]
+
+
+nums = [3, 1, 3, 4, 2]
+solution = Solution()
+print(solution.findDuplicate(nums))
