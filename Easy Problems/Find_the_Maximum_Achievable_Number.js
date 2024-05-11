@@ -29,3 +29,20 @@ var theMaximumAchievableX = function (num, t) {
     return num + 2 * t;
 
 };
+
+
+/**
+ * @param {number} num
+ * @param {number} t
+ * @return {number}
+ */
+var theMaximumAchievableX = function (num, t) {
+    let x = num;
+    for (let i = 0; i < t + t; i++) {
+        x += 1;
+    }
+    return x;
+};
+
+
+console.log(theMaximumAchievableX(num = 3, t = 2));
