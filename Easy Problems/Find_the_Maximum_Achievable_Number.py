@@ -28,3 +28,13 @@ class Solution(object):
         :type t: int
         :rtype: int
         """
+        x = num
+        for i in range(2 * t):
+            x += 1
+        return x
+
+
+num = 5
+t = 1
+solution = Solution()
+print(solution.theMaximumAchievableX(num, t))
