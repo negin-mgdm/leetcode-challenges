@@ -26,3 +26,23 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
+        count = {}
+        # Count the occurrences of characters in s.
+        for char in s:
+            if char in count:
+                count[char] += 1
+            else:
+                count[char] = 1
+        # Subtract the occurrences of characters in t.
+        for char in t:
+            if char in count and count[char] > 0:
+                count[char] -= 1
+            # If the character is not in count or its count is already 0, it's the extra character.
+            else:
+                return char
+
+
+s = "abcd"
+t = "abcde"
+solution = Solution()
+print(solution.findTheDifference(s, t))
