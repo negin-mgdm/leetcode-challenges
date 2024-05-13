@@ -31,20 +31,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        triplets = set()
-        nums.sort()
-        length = len(nums)
-        for i in range(length - 2):
-            for j in range(i + 1, length - 1):
-                for k in range(j + 1, length):
-                    total = nums[i] + nums[j] + nums[k]
-                    if i != j and i != k and j != k and total == 0:
-                        triplet = sorted([nums[i], nums[j], nums[k]])
-                        # Check if the triplet is not already in the list.
-                        if tuple(triplet) not in triplets:
-                            triplets.add((nums[i], nums[j], nums[k]))
+        nums.sort()  # Sort the input array.
+        triplets = set()  # Initialise a set to store unique triplets.
 
-        return triplets
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:  # Skip duplicates.
+                continue
+
+            seen = set()  # Initialise a set to store seen values.
+            target = -nums[i]  # Calculate the target sum.
+
+            for j in range(i + 1, len(nums)):
+                complement = target - nums[j]
+                if complement in seen:  # Check if complement exists in seen values.
+                    # Add the triplet to the set.
+                    triplets.add((nums[i], complement, nums[j]))
+                else:
+                    seen.add(nums[j])  # Add current number to seen set.
+
+        return list(triplets)
 
 
 nums = [-1, 0, 1, 2, -1, -4]
