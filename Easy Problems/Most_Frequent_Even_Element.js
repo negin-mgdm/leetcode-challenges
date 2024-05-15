@@ -50,5 +50,5 @@ var mostFrequentEven = function (nums) {
 };
 
 
-nums = [4, 4, 4, 9, 2, 4];
+let nums = [4, 4, 4, 9, 2, 4];
 console.log(mostFrequentEven(nums));
