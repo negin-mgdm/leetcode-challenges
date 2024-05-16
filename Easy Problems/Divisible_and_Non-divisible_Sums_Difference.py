@@ -41,3 +41,17 @@ class Solution(object):
         :type m: int
         :rtype: int
         """
+        num1 = []
+        num2 = []
+        for num in range(1, n+1):
+            if num % m != 0:
+                num1.append(num)
+            elif num % m == 0:
+                num2.append(num)
+        return (sum(num1) - sum(num2))
+
+
+n = 5
+m = 6
+solution = Solution()
+print(solution.differenceOfSums(n, m))
