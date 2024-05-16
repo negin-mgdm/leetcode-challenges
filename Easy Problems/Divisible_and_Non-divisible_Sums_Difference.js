@@ -39,5 +39,27 @@ Constraints:
  * @return {number}
  */
 var differenceOfSums = function (n, m) {
-
+    let num1 = [];
+    let num2 = [];
+    for (i = 1; i <= n; i++) {
+        if (i % m != 0) {
+            num1.push(i);
+        } else {
+            num2.push(i);
+        }
+    }
+    let sum1 = 0;
+    let sum2 = 0;
+    for (let num of num1) {
+        sum1 += num;
+    }
+    for (let num of num2) {
+        sum2 += num;
+    }
+    return sum1 - sum2;
 };
+
+
+let n = 5;
+let m = 6;
+console.log(differenceOfSums(n, m));
