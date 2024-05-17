@@ -22,3 +22,10 @@ class Solution(object):
         :type num2: int
         :rtype: int
         """
+        return num1 + num2
+
+
+num1 = 12
+num2 = 5
+solution = Solution()
+print(solution.sum(num1, num2))
