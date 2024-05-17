@@ -34,3 +34,14 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        count = []
+        for hour in hours:
+            if hour >= target:
+                count.append(hour)
+        return len(count)
+
+
+hours = [5, 1, 4, 2, 2]
+target = 6
+solution = Solution()
+print(solution.numberOfEmployeesWhoMetTarget(hours, target))
