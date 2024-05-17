@@ -20,5 +20,9 @@ Constraints:
  * @return {number}
  */
 var sum = function (num1, num2) {
-
+    return num1 + num2;
 };
+
+let num1 = -10;
+let num2 = 4;
+console.log(sum(num1, num2));
