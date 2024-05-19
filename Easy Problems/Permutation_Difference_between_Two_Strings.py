@@ -34,3 +34,23 @@ class Solution(object):
         :type t: str
         :rtype: int
         """
+
+        s_char = {}
+        for i, char in enumerate(s):
+            s_char[char] = i
+
+        t_char = {}
+        for i, char in enumerate(t):
+            t_char[char] = i
+
+        difference = 0
+        for char in s_char.keys():
+            difference += abs(s_char[char] - t_char[char])
+
+        return difference
+
+
+s = "abcde"
+t = "edbac"
+solution = Solution()
+print(solution.findPermutationDifference(s, t))
