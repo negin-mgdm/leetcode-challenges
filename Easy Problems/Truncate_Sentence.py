@@ -43,9 +43,7 @@ class Solution(object):
         :rtype: str
         """
         words = s.split()
-
-        for word in range(len(words)):
-            result = words[:k]
+        result = words[:k]
         return ' '.join(result)
 
 
