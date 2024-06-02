@@ -44,10 +44,16 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        for i, char in enumerate(s):
+        i = 0
+        while i < len(s):
+            char = s[i]
             if char == "i":
-                s = s[i::-1] + s[i+1:]
-        return s.replace("i", '')
+                reversed_first_half = s[i - 1::-1]
+                second_half = s[i+1:]
+                s = reversed_first_half + second_half
+                continue
+            i += 1
+        return s
 
 
 s = "poiinter"
