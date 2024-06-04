@@ -38,26 +38,12 @@ class Solution(object):
         :type ruleValue: str
         :rtype: int
         """
-        type = []
-        color = []
-        name = []
-
-        for item in items:
-            type.append(item[0])
-            color.append(item[1])
-            name.append(item[2])
-
+        ruleMapping = {"type": 0, "color": 1, "name": 2}
+        index = ruleMapping[ruleKey]
         count = 0
-        for i in range(len(items)):
-            if ruleKey == "type" and ruleValue == type[i]:
+        for item in items:
+            if item[index] == ruleValue:
                 count += 1
-
-            elif ruleKey == "color" and ruleValue == color[i]:
-                count += 1
-
-            elif ruleKey == "name" and ruleValue == name[i]:
-                count += 1
-
         return count
 
 
