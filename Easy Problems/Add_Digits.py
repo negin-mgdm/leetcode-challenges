@@ -19,7 +19,7 @@ Constraints:
 
 
 class Solution(object):
-    def addDigits(self, num):
+    def addDigits1(self, num):
         """
         :type num: int
         :rtype: int
@@ -48,4 +48,24 @@ class Solution(object):
 
 num = 199
 solution = Solution()
-print(solution.addDigits(num))
+print(solution.addDigits1(num))
+
+
+class Solution(object):
+    def addDigits2(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        if num == 0:
+            return num
+
+        if num % 9 == 0:
+            return 9
+
+        return num % 9
+
+
+num = 199
+solution = Solution()
+print(solution.addDigits2(num))
