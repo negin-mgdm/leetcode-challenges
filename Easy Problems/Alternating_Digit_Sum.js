@@ -43,5 +43,5 @@ var alternateDigitSum = function (n) {
     return result;
 };
 
-let n = 521;
+let n = 600;
 console.log(alternateDigitSum(n))
