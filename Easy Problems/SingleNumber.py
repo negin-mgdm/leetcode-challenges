@@ -17,7 +17,7 @@ Output: 1
 
 
 class Solution(object):
-    def singleNumber(self, nums):
+    def singleNumber1(self, nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -35,4 +35,22 @@ class Solution(object):
 
 nums = [4, 1, 2, 1, 2]
 solution = Solution()
-print(solution.singleNumber(nums))
+print(solution.singleNumber1(nums))
+
+
+class Solution(object):
+    def singleNumber2(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        for i in range(0, len(nums) - 1, 2):
+            if nums[i] != nums[i + 1]:
+                return nums[i]
+        return nums[-1]
+
+
+nums = [4, 1, 2, 1, 2]
+solution = Solution()
+print(solution.singleNumber2(nums))
