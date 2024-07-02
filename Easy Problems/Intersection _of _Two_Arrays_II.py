@@ -37,3 +37,39 @@ nums1 = [1, 2, 2, 1]
 nums2 = [2]
 solution = Solution()
 print(solution.intersect(nums1, nums2))
+
+
+class Solution(object):
+    def intersect1(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        nums1_length = len(nums1)
+        nums2_length = len(nums2)
+
+        if nums1_length < nums2_length:
+            shorter_arr = nums1
+            longer_arr = nums2
+        else:
+            shorter_arr = nums2
+            longer_arr = nums1
+
+        result = []
+        used_indices = set()
+
+        for num1 in shorter_arr:
+            for i, num2 in enumerate(longer_arr):
+                if num2 == num1 and i not in used_indices:
+                    result.append(num1)
+                    used_indices.add(i)
+                    break
+
+        return result
+
+
+nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]
+solution = Solution()
+print(solution.intersect1(nums1, nums2))
