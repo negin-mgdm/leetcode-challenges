@@ -36,44 +36,28 @@ class Solution(object):
         :type y: int
         :rtype: int
         """
-        str_x = "ab"
-        str_y = "ba"
+        def remove_pairs(s, first, second, score):
+            stack = []
+            count = 0
 
+            for char in s:
+                if char == second and stack and stack[-1] == first:
+                    stack.pop()
+                    count += score
+                else:
+                    stack.append(char)
+
+            return "".join(stack), count
+
+        # Ensure we handle the higher score pair first
         if x > y:
-            larger_score_str = str_x
-            larger_score = x
-            smaller_score_str = str_y
-            smaller_score = y
+            s, count_larger = remove_pairs(s, 'a', 'b', x)
+            s, count_smaller = remove_pairs(s, 'b', 'a', y)
         else:
-            larger_score_str = str_y
-            larger_score = y
-            smaller_score_str = str_x
-            smaller_score = x
+            s, count_smaller = remove_pairs(s, 'b', 'a', y)
+            s, count_larger = remove_pairs(s, 'a', 'b', x)
 
-        i = 0
-        count_larger_score = 0
-        count_smaller_score = 0
-
-        while i < len(s) - 1:
-            if s[i:i+2] == larger_score_str:
-                s = s[:i] + s[i+2:]
-                count_larger_score += larger_score
-                i = max(i - 2, 0)  # Move back to handle overlapping pairs
-
-            else:
-                i += 1
-
-        i = 0
-
-        while i < len(s) - 1:
-            if s[i:i+2] == smaller_score_str:
-                s = s[:i] + s[i+2:]
-                count_smaller_score += smaller_score
-                i = max(i - 2, 0)  # Move back to handle overlapping pairs
-            else:
-                i += 1
-
-        return count_larger_score + count_smaller_score
+        return count_larger + count_smaller
 
 
 s = "aabbaaxybbaabb"
