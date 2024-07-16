@@ -26,16 +26,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        count = {}
+        set_nums = set()
 
         for num in nums:
-            if num in count:
-                count[num] += 1
+            if num not in set_nums:
+                set_nums.add(num)
             else:
-                count[num] = 1
-
-        for key in count:
-            if count[key] > 1:
                 return True
         return False
 
