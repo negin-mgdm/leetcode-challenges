@@ -40,8 +40,7 @@ var createCounter = function (n) {
 };
 
 
-const counter = createCounter(10)
-console.log(counter())
-console.log(counter())
-console.log(counter())
-    ;
+const counter = createCounter(10);
+console.log(counter());
+console.log(counter());
+console.log(counter());
