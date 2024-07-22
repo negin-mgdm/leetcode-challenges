@@ -47,3 +47,24 @@ names = ["Mary", "John", "Emma"]
 heights = [180, 165, 170]
 solution = Solution()
 print(solution.sortPeople(names, heights))
+
+
+class Solution(object):
+    def sortPeople1(self, names, heights):
+        """
+        :type names: List[str]
+        :type heights: List[int]
+        :rtype: List[str]
+        """
+        for i in range(len(names)):
+            for j in range(len(heights) - 1):
+                if heights[j] < heights[j + 1]:
+                    heights[j + 1], heights[j] = heights[j], heights[j + 1]
+                    names[j + 1], names[j] = names[j], names[j + 1]
+        return names
+
+
+names = ["Mary", "John", "Emma"]
+heights = [180, 165, 170]
+solution = Solution()
+print(solution.sortPeople1(names, heights))
