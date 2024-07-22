@@ -45,3 +45,27 @@ var sortPeople = function (names, heights) {
 
 let names = ["Alice", "Bob", "Bob"];
 let heights = [155, 185, 150];
+console.log(sortPeople(names, heights));
+
+
+
+/**
+ * @param {string[]} names1
+ * @param {number[]} heights1
+ * @return {string[]}
+ */
+var sortPeople1 = function (names1, heights1) {
+    for (let i = 0; i < names1.length; i++) {
+        for (let j = 0; j < heights1.length - 1; j++) {
+            if (heights1[j] < heights1[j + 1]) {
+                [heights1[j + 1], heights1[j]] = [heights1[j], heights1[j + 1]];
+                [names1[j + 1], names1[j]] = [names1[j], names1[j + 1]];
+            }
+        }
+    }
+    return names1;
+};
+
+let names1 = ["Mary", "John", "Emma"];
+let heights1 = [180, 165, 170];
+console.log(sortPeople1(names1, heights1));
