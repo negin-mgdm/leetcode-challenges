@@ -21,6 +21,8 @@ nums.length == n
 -109 <= lower <= upper <= 109
 '''
 
+import bisect
+
 
 class Solution(object):
     def countFairPairs(self, nums, lower, upper):
@@ -30,13 +32,13 @@ class Solution(object):
         :type upper: int
         :rtype: int
         """
+        nums.sort()
         count = 0
 
         for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                added_nums = nums[i] + nums[j]
-                if lower <= added_nums <= upper:
-                    count += 1
+            l = bisect.bisect_left(nums, lower - nums[i], i + 1)
+            r = bisect.bisect_right(nums, upper - nums[i], i + 1)
+            count += r - l
 
         return count
 
