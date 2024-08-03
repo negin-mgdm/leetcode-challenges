@@ -38,10 +38,10 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
-        sorted_arr = sorted(arr)
-        sorted_target = sorted(target)
+        # sorted_arr = sorted(arr)
+        # sorted_target = sorted(target)
 
-        return sorted_target == sorted_arr
+        return sorted(arr) == sorted(target)
 
 
 target = [1, 2, 3, 4]
