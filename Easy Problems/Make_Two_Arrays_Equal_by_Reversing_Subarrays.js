@@ -36,10 +36,7 @@ target.length == arr.length
  * @return {boolean}
  */
 var canBeEqual = function (target, arr) {
-    let sortedArr = arr.sort((a, b) => a - b);
-    let sortedTarget = target.sort((a, b) => a - b);
-
-    return sortedTarget.join() == sortedArr.join();
+    return arr.sort((a, b) => a - b).join() == target.sort((a, b) => a - b).join();
 };
 
 let target = [1, 2, 3, 4];
