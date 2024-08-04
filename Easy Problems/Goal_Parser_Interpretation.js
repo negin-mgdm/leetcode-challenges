@@ -28,10 +28,22 @@ Constraints:
 command consists of "G", "()", and/or "(al)" in some order.
 */
 
+
 /**
  * @param {string} command
  * @return {string}
  */
+var interpret = function (command) {
+    return command.replace(/\(\)/g, "o").replace(/\(al\)/g, "al");
+};
+
+let command = "(al)G(al)()()G";
+console.log(interpret(command));
+
+/*
+ * @param {string} command
+ * @return {string}
+ 
 var interpret = function (command) {
     let result = "";
     let x = "";
@@ -45,7 +57,7 @@ var interpret = function (command) {
         if (x == "()") {
             result += "o";
             x = "";
-        } else if (x == "(al)") {
+        } else if (x == "(al)"){
             result += "al";
             x = "";
         }
@@ -55,3 +67,4 @@ var interpret = function (command) {
 
 let command = "(al)G(al)()()G";
 console.log(interpret(command));
+*/
