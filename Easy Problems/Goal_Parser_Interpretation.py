@@ -35,6 +35,20 @@ class Solution(object):
         :type command: str
         :rtype: str
         """
+        return command.replace("()", "o").replace("(al)", "al")
+
+
+command = "G()()()()(al)"
+solution = Solution()
+print(solution.interpret(command))
+
+
+class Solution(object):
+    def interpret1(self, command):
+        """
+        :type command: str
+        :rtype: str
+        """
         result = ""
         x = ""
 
@@ -57,4 +71,4 @@ class Solution(object):
 
 command = "G()()()()(al)"
 solution = Solution()
-print(solution.interpret(command))
+print(solution.interpret1(command))
