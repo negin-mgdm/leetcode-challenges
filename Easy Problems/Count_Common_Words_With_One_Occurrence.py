@@ -27,11 +27,48 @@ Constraints:
 words1[i] and words2[j] consists only of lowercase English letters.
 '''
 
+# Optimised Solution
 from collections import Counter
 
 
 class Solution(object):
     def countWords(self, words1, words2):
+        """
+        :type words1: List[str]
+        :type words2: List[str]
+        :rtype: int
+        """
+        words1_count = Counter(words1)
+        words2_count = Counter(words2)
+
+        for word, count in list(words1_count.items()):
+            if count != 1:
+                del words1_count[word]
+
+        for word, count in list(words2_count.items()):
+            if count != 1:
+                del words2_count[word]
+
+        combined_count = words1_count + words2_count
+
+        result = 0
+
+        for i in combined_count:
+            if combined_count[i] == 2:
+                result += 1
+
+        return result
+
+
+words1 = ["leetcode", "is", "amazing", "as", "is"]
+words2 = ["amazing", "leetcode", "is"]
+solution = Solution()
+print(solution.countWords(words1, words2))
+
+
+# First Submitted Solution
+class Solution(object):
+    def countWords1(self, words1, words2):
         """
         :type words1: List[str]
         :type words2: List[str]
@@ -53,4 +90,4 @@ class Solution(object):
 words1 = ["leetcode", "is", "amazing", "as", "is"]
 words2 = ["amazing", "leetcode", "is"]
 solution = Solution()
-print(solution.countWords(words1, words2))
+print(solution.countWords1(words1, words2))
