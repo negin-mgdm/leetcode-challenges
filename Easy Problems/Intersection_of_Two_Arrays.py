@@ -16,9 +16,36 @@ Constraints:
 0 <= nums1[i], nums2[i] <= 1000
 '''
 
+# Optimised Solution:
+
 
 class Solution(object):
     def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        shorter_arr = set(nums1 if len(nums1) <= len(nums2) else nums2)
+        longer_arr = set(nums1 if len(nums1) > len(nums2) else nums2)
+
+        result = []
+        for i in shorter_arr:
+            if i in longer_arr:
+                result.append(i)
+
+        return result
+
+
+nums1 = [3]
+nums2 = [1]
+solution = Solution()
+print(solution.intersection(nums1, nums2))
+
+
+# First submitted Solution:
+class Solution(object):
+    def intersection1(self, nums1, nums2):
         """
         :type nums1: List[int]
         :type nums2: List[int]
@@ -46,4 +73,4 @@ class Solution(object):
 nums1 = [1, 2, 2, 1]
 nums2 = [2, 2]
 solution = Solution()
-print(solution.intersection(nums1, nums2))
+print(solution.intersection1(nums1, nums2))
