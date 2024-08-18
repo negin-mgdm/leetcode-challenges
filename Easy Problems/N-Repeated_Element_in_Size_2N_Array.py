@@ -23,6 +23,7 @@ nums.length == 2 * n
 0 <= nums[i] <= 104
 nums contains n + 1 unique elements and one of them is repeated exactly n times.
 '''
+# First solution
 
 from collections import Counter
 
@@ -42,3 +43,24 @@ class Solution(object):
 nums = [2, 1, 2, 5, 3, 2]
 solution = Solution()
 print(solution.repeatedNTimes(nums))
+
+
+# Second Solution
+
+class Solution(object):
+    def repeatedNTimes1(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        seen_nums = set()
+        for num in nums:
+            if num not in seen_nums:
+                seen_nums.add(num)
+            else:
+                return num
+
+
+nums = [2, 1, 2, 5, 3, 2]
+solution = Solution()
+print(solution.repeatedNTimes1(nums))
