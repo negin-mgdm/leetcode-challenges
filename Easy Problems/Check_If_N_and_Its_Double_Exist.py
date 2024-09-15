@@ -26,10 +26,13 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
-        for i in range(len(arr)):
-            for j in range(len(arr)):
-                if i != j and arr[i] == 2 * arr[j]:
-                    return True
+        seen_nums = set()
+        for num in arr:
+            # Check if double of the number or half of the number is already in the set.
+            if 2 * num in seen_nums or (num % 2 == 0 and num // 2 in seen_nums):
+                return True
+            seen_nums.add(num)
+        return False
 
 
 arr = [7, 1, 14, 11]
