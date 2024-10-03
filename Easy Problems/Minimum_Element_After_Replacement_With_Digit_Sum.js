@@ -36,7 +36,7 @@ var minElement = function (nums) {
         let sumNum = 0;
         if (num.toString().length > 1) {
             for (let digit of num.toString()) {
-                sumNum += parseInt(num);
+                sumNum += parseInt(digit);
             }
             arr.push(sumNum);
             sumNum = 0;
