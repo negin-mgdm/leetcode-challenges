@@ -28,8 +28,36 @@ nums is sorted in a non-decreasing order.
 '''
 
 
+from collections import Counter
+
+
 class Solution(object):
     def maximumCount(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        count = Counter(nums)
+
+        pos = 0
+        neg = 0
+        for key, value in count.items():
+            if key != 0:
+                if key > 0:
+                    pos += value
+                elif key < 0:
+                    neg += value
+
+        return max(pos, neg)
+
+
+nums = [-3, -2, -1, 0, 0, 1, 2]
+solution = Solution()
+print(solution.maximumCount(nums))
+
+
+class Solution(object):
+    def maximumCount1(self, nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -52,4 +80,4 @@ class Solution(object):
 
 nums = [-3, -2, -1, 0, 0, 1, 2]
 solution = Solution()
-print(solution.maximumCount(nums))
+print(solution.maximumCount1(nums))
