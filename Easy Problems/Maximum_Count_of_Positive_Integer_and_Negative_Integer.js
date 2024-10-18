@@ -32,6 +32,37 @@ nums is sorted in a non-decreasing order.
  * @return {number}
  */
 var maximumCount = function (nums) {
+    let count = {};
+    let pos = 0;
+    let neg = 0;
+
+    for (let num of nums) {
+        if (num in count) {
+            count[num] += 1;
+        }
+        else {
+            count[num] = 1;
+        }
+    }
+
+    for (let [key, value] of Object.entries(count)) {
+        if (key > 0) {
+            pos += value;
+        }
+        else if (key < 0) {
+            neg += value;
+        }
+
+    }
+
+    return Math.max(pos, neg);
+};
+
+let nums = [-3, -2, -1, 0, 0, 1, 2];
+console.log(maximumCount(nums));
+
+/*
+var maximumCount = function (nums) {
     let pos = 0;
     let neg = 0;
     for (let num of nums) {
@@ -52,6 +83,4 @@ var maximumCount = function (nums) {
         return pos;
     }
 };
-
-let nums = [-3, -2, -1, 0, 0, 1, 2];
-console.log(maximumCount(nums));
+*/
