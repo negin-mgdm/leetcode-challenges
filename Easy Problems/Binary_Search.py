@@ -30,6 +30,37 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
+        start = 0
+        end = len(nums) - 1
+
+        while start <= end:
+            mid_index = (start + end) // 2
+
+            if nums[mid_index] == target:
+                return mid_index
+
+            elif nums[mid_index] < target:
+                start = mid_index + 1
+
+            else:
+                end = mid_index - 1
+
+        return -1
+
+
+nums = [-1, 0, 3, 5, 9, 12]
+target = 9
+solution = Solution()
+print(solution.search(nums, target))
+
+
+class Solution(object):
+    def search1(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         for i, num in enumerate(nums):
             if num == target:
                 return i
@@ -39,4 +70,4 @@ class Solution(object):
 nums = [-1, 0, 3, 5, 9, 12]
 target = 9
 solution = Solution()
-print(solution.search(nums, target))
+print(solution.search1(nums, target))
