@@ -35,7 +35,7 @@ var findIntersectionValues = function (nums1, nums2) {
     let result = [];
     let count1 = {};
     for (let num of nums1) {
-        if (i in count1) {
+        if (num in count1) {
             count1[num] += 1;
         } else {
             count1[num] = 1;
