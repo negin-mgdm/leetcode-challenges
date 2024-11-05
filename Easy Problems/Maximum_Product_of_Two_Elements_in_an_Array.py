@@ -23,8 +23,28 @@ Constraints:
 '''
 
 
+# Solution 1
 class Solution(object):
     def maxProduct(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        sorted_nums = sorted(nums, reverse=True)
+
+        result = (sorted_nums[0]-1) * (sorted_nums[1]-1)
+
+        return result
+
+
+nums = [3, 4, 5, 2]
+solution = Solution()
+print(solution.maxProduct(nums))
+
+
+# Solution 2
+class Solution(object):
+    def maxProduct1(self, nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -42,4 +62,4 @@ class Solution(object):
 
 nums = [3, 4, 5, 2]
 solution = Solution()
-print(solution.maxProduct(nums))
+print(solution.maxProduct1(nums))
