@@ -34,22 +34,21 @@ Constraints:
 
 
 class Solution(object):
-    def getSubarraysOfLength(self, arr, n):
+    def getSumOfSubarraysOfLength(self, arr, n):
         subarrays = []
         for start in range(len(arr) - n + 1):
             subarray = []
             for index in range(start, start+n):
                 subarray.append(arr[index])
-            subarrays.append(subarray)
-        return subarrays
+            subarrays.append(sum(subarray))
+        return sum(subarrays)
 
     def sumOddLengthSubarrays(self, arr):
         total_sum = 0
         for length in range(1, len(arr)+1):
             if length % 2 != 0:
-                odd_length_subarrays = self.getSubarraysOfLength(arr, length)
-                for i in range(len(odd_length_subarrays)):
-                    total_sum = total_sum + sum(odd_length_subarrays[i])
+                total_sum = total_sum + \
+                    self.getSumOfSubarraysOfLength(arr, length)
         return total_sum
 
 
