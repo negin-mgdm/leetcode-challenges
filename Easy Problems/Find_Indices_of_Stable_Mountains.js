@@ -37,7 +37,7 @@ var stableMountains = function (height, threshold) {
     let stableMount = [];
     for (let i = 0; i < height.length - 1; i++) {
         if (height[i] > threshold) {
-            stableMount.push(i + 1)
+            stableMount.push(i + 1);
         }
     }
     return stableMount;
