@@ -48,8 +48,6 @@ class Solution(object):
             if i not in banned_set and int_sum + i <= maxSum:
                 count += 1
                 int_sum += i
-            elif int_sum + i > maxSum:
-                break
 
         return count
 
