@@ -68,7 +68,7 @@ var reduce = function (nums, fn, init) {
     return val;
 };
 
-const nums1 = [1, 2, 3, 4];
-const fn1 = function (accum, curr) { return accum + curr; };
-const init1 = 0;
-console.log(reduce(nums1, fn1, init1));
+const nums = [1, 2, 3, 4];
+const fn = function (accum, curr) { return accum + curr; };
+const init = 0;
+console.log(reduce(nums, fn, init));
