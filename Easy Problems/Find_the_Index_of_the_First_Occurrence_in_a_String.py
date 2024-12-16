@@ -26,7 +26,8 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-        return haystack.index(needle) if needle in haystack else -1
+        # return haystack.index(needle) if needle in haystack else -1
+        return haystack.find(needle)
 
 
 haystack = "leetcode"
