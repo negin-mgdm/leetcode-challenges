@@ -46,9 +46,9 @@ class Solution(object):
         return len(triplets)
 
 
-arr = [3, 0, 1, 1, 9, 7]
-a = 7
-b = 2
-c = 3
+arr = [1, 1, 2, 2, 3]
+a = 0
+b = 0
+c = 1
 solution = Solution()
 print(solution.countGoodTriplets(arr, a, b, c))
