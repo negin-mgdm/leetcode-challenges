@@ -46,7 +46,7 @@ class Solution(object):
         return len(triplets)
 
 
-arr = [1, 1, 2, 2, 3]
+arr = [1, 1, 2, 2, 4]
 a = 0
 b = 0
 c = 1
