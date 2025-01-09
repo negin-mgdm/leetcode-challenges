@@ -41,7 +41,7 @@ class Solution(object):
             for j in range(i + 1, n):
                 for k in range(j + 1, n):
                     if nums[i] != nums[j] and nums[i] != nums[k] and nums[j] != nums[k]:
-                        triplet = (nums[i], nums[j], nums[k])
+                        triplet = (i, j, k)
                         triplets.append(triplet)
 
         return len(triplets)
