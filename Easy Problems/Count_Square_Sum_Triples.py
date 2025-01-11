@@ -17,6 +17,8 @@ Constraints:
 1 <= n <= 250
 '''
 
+import math
+
 
 class Solution(object):
     def countTriples(self, n):
@@ -24,16 +26,15 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        triplets = []
+        count = 0
 
         for i in range(1, n + 1):
             for j in range(1, n + 1):
-                for k in range(1, n + 1):
-                    if i**2 + j**2 == k**2:
-                        triplet = (i, j, k)
-                        triplets.append(triplet)
+                k = math.isqrt(i**2 + j**2)  # Calculating k.
+                if k <= n and i**2 + j**2 == k**2:  # Checking if k is valid.
+                    count += 1
 
-        return len(triplets)
+        return count
 
 
 number = 5
