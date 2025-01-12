@@ -31,6 +31,7 @@ class Solution(object):
         for i in range(1, n + 1):
             for j in range(1, n + 1):
                 k = math.isqrt(i**2 + j**2)  # Calculating k.
+                # OR k = math.floor(math.sqrt(i**2 + j**2)) in older Python versions.
                 if k <= n and i**2 + j**2 == k**2:  # Checking if k is valid.
                     count += 1
 
