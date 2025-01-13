@@ -37,7 +37,6 @@ class Solution:
             for j in range(i + 1, len(nums)):
                 for k in range(j + 1, len(nums)):
                     if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
-                        triplet = (i, j, k)
                         count += 1
 
         return count
