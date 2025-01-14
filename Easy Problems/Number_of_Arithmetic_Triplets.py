@@ -33,11 +33,9 @@ class Solution:
     def arithmeticTriplets(self, nums, diff):
         count = 0
 
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):
-                for k in range(j + 1, len(nums)):
-                    if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
-                        count += 1
+        for num in nums:
+            if num + diff in nums and num + 2 * diff in nums:
+                count += 1
 
         return count
 
