@@ -35,6 +35,26 @@ nums is strictly increasing.
  */
 var arithmeticTriplets = function (nums, diff) {
     let count = 0;
+
+    for (let num of nums) {
+        if (nums.includes(num + diff) && nums.includes(num + 2 * diff)) {
+            count += 1;
+        }
+    }
+
+    return count;
+};
+
+
+let nums = [4, 5, 6, 7, 8, 9];
+let diff = 2;
+console.log(arithmeticTriplets(nums, diff));
+
+
+/*
+First submitted solution:
+var arithmeticTriplets = function (nums, diff) {
+    let count = 0;
     let n = nums.length;
 
     for (let i = 0; i < n; i++) {
@@ -49,7 +69,4 @@ var arithmeticTriplets = function (nums, diff) {
 
     return count;
 };
-
-let nums = [4, 5, 6, 7, 8, 9];
-let diff = 2;
-console.log(arithmeticTriplets(nums, diff));
+*/
