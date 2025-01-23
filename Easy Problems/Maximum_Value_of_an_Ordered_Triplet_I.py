@@ -34,19 +34,16 @@ class Solution(object):
         :rtype: int
         """
         n = len(nums)
-        triplets_values = []
+        max_value = 0
 
         for i in range(n):
             for j in range(i + 1, n):
                 for k in range(j + 1, n):
                     value = (nums[i] - nums[j]) * nums[k]
-                    if value >= 0:
-                        triplets_values.append(value)
+                    if value > max_value:
+                        max_value = value
 
-        if len(triplets_values) == 0:
-            return 0
-
-        return max(triplets_values)
+        return max_value
 
 
 nums = [1, 10, 3, 4, 19]
