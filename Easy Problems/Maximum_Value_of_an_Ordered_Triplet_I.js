@@ -32,22 +32,19 @@ Constraints:
  */
 var maximumTripletValue = function (nums) {
     let n = nums.length;
-    let tripletsValues = [];
+    let maxValue = 0;
 
     for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
             for (let k = j + 1; k < n; k++) {
                 let value = (nums[i] - nums[j]) * nums[k];
-                if (value >= 0) {
-                    tripletsValues.push(value);
+                if (value > maxValue) {
+                    maxValue = value;
                 }
             }
         }
     }
-    if (tripletsValues.length == 0) {
-        return 0;
-    }
-    return Math.max(...tripletsValues);
+    return maxValue;
 };
 
 let nums = [1, 10, 3, 4, 19];
