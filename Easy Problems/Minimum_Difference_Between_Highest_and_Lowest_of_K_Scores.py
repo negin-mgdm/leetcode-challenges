@@ -42,7 +42,6 @@ class Solution(object):
         nums.sort()
 
         min_diff = float('inf')
-        difference = 0
 
         for i in range(0, len(nums) - k + 1):
             # The minimum element is at index i and the maximum element is at index i + k - 1 in the sorted array(subarray).
