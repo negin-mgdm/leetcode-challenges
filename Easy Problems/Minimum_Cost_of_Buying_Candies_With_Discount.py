@@ -45,13 +45,13 @@ class Solution(object):
         """
         candies = sorted(cost, reverse=True)
 
-        # Iterating backward to avoid index shifting issues.
-        for i in range(len(candies) - 1, -1, -1):
-            # `i + 1` to match 1-based indexing for every 3rd element.
-            if (i+1) % 3 == 0:
-                candies.pop(i)
+        total_cost = 0
 
-        return sum(candies)
+        for i in range(len(candies)):
+            if (i+1) % 3 != 0:
+                total_cost += candies[i]
+
+        return total_cost
 
 
 cost = [6, 5, 7, 9, 2, 2]
