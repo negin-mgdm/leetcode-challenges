@@ -31,12 +31,11 @@ class Solution(object):
         """
         if n <= 0:
             return False
+        return (n & (n - 1)) == 0  # Fastest bitwise method
+        # Or in Python 3:
+        # return math.log2(n).is_integer()
 
-        return math.log2(n).is_integer()
-        # Or in Python 2:
-        # return math.log(n, 2) == int(math.log(n, 2))
 
-
-n = -16
+n = 536870912
 solution = Solution()
 print(solution.isPowerOfTwo(n))
