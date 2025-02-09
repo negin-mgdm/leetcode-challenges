@@ -29,8 +29,11 @@ var isPowerOfTwo = function (n) {
         return false;
     }
 
-    return Number.isInteger(Math.log2(n));
-    // return Math.log2(n) == parseInt(Math.log2(n));
+    while (n % 2 == 0) {
+        n /= 2;
+    }
+
+    return n == 1;
 };
 
 let n = 1;
