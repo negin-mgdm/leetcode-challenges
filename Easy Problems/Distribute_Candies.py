@@ -40,11 +40,7 @@ class Solution(object):
 
         total_allowed_candies = len(candyType)//2
 
-        if types_of_candies >= total_allowed_candies:
-            return total_allowed_candies
-
-        elif types_of_candies < total_allowed_candies:
-            return types_of_candies
+        return min(types_of_candies, total_allowed_candies)
 
 
 candyType = [1, 1, 2, 3]
