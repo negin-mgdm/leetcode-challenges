@@ -35,13 +35,10 @@ n is even.
  */
 var distributeCandies = function (candyType) {
     let typeOfCandies = new Set(candyType);
+
     let totalAllowedCandies = candyType.length / 2;
 
-    if (typeOfCandies.size >= totalAllowedCandies) {
-        return totalAllowedCandies;
-    } else {
-        return typeOfCandies.size;
-    }
+    return Math.min(typeOfCandies.size, totalAllowedCandies);
 
 };
 
