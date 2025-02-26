@@ -14,6 +14,33 @@ Explanation: [9,4] is also accepted.
 '''
 
 
+from collections import Counter
+
+
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        counts = Counter(nums1)
+        result = []
+
+        for num in nums2:
+            if counts[num] > 0:
+                result.append(num)
+                counts[num] -= 1
+
+        return result
+
+
+nums1 = [1, 2, 2, 1]
+nums2 = [2, 2]
+solution = Solution()
+print(solution.intersection(nums1, nums2))
+
+
 class Solution(object):
     def intersect(self, nums1, nums2):
         """
