@@ -22,31 +22,25 @@ Constraints:
  * @return {number[]}
  */
 var intersect = function (nums1, nums2) {
-    let nums1Len = nums1.length;
-    let nums2Len = nums2.length;
-    if (nums1Len < nums2Len) {
-        shorterArr = nums1;
-        longerArr = nums2;
-    } else {
-        shorterArr = nums2;
-        longerArr = nums1;
-    }
+    let intersection = [];
+    let nums1Map = new Map();
 
-    let result = [];
-    // The usedIndices set ensures that each index of longerArr is only used once.
-    let usedIndices = new Set();
-
-    for (let i = 0; i < shorterArr.length; i++) {
-        for (let j = 0; j < longerArr.length; j++) {
-            if (shorterArr[i] == longerArr[j] && !usedIndices.has(j)) {
-                result.push(shorterArr[i]);
-                usedIndices.add(j);
-                break;
-            }
+    for (let num of nums1) {
+        if (nums1Map.has(num)) {
+            nums1Map.set(num, nums1Map.get(num) + 1);
+        } else {
+            nums1Map.set(num, 1);
         }
     }
 
-    return result;
+    for (let num of nums2) {
+        if (nums1Map.has(num) && nums1Map.get(num) > 0) {
+            intersection.push(num);
+            nums1Map.set(num, nums1Map.get(num) - 1);
+        }
+    }
+
+    return intersection;
 };
 
 let nums1 = [4, 9, 5];
