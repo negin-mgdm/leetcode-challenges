@@ -34,8 +34,10 @@ num consists of only 6 and 9 digits.
  */
 var maximum69Number = function (num) {
     let numStr = num.toString();
+
     let max69Num = numStr.replace('6', '9');
-    return max69Num;
+
+    return parseInt(max69Num);
 };
 
 let num = 9669;
