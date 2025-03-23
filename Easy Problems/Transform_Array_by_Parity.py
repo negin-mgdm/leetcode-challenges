@@ -36,10 +36,8 @@ class Solution(object):
         for num in nums:
             if num % 2 == 0:
                 new_arr.append(0)
-            elif num % 2 != 0:
-                new_arr.append(1)
             else:
-                new_arr.append(num)
+                new_arr.append(1)
 
         return sorted(new_arr)
 
