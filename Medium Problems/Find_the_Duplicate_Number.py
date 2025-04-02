@@ -16,6 +16,11 @@ Output: 3
 '''
 
 
+from collections import Counter
+
+# SOLUTION NUMBER 1 :
+
+
 class Solution(object):
     def findDuplicate(self, nums):
         """
@@ -54,5 +59,25 @@ class Solution(object):
 
 
 nums = [3, 1, 3, 4, 2]
+solution = Solution()
+print(solution.findDuplicate(nums))
+
+# SOLUTION NUMBER 3 :
+
+
+class Solution(object):
+    def findDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        count = Counter(nums)
+
+        for key, value in count.items():
+            if value >= 2:
+                return int(key)
+
+
+nums = [1, 3, 4, 2, 2]
 solution = Solution()
 print(solution.findDuplicate(nums))
