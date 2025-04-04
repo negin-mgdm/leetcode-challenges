@@ -26,6 +26,13 @@ Output: [1]
 Explanation: The arrays we are merging are [] and [1].
 The result of the merge is [1].
 Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
+Constraints:
+nums1.length == m + n
+nums2.length == n
+0 <= m, n <= 200
+1 <= m + n <= 200
+-109 <= nums1[i], nums2[j] <= 109
 '''
 
 
@@ -38,15 +45,21 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        nums1_range = [num for num in nums1[:m]]
-        nums2_range = [num for num in nums2[:n]]
-        merged_nums = nums1_range + nums2_range
-        merged_nums.sort()
-        nums1[:m + n] = merged_nums
-        return merged_nums
+        # Solution 1:
+        # nums1_range = [num for num in nums1[:m]]
+        # nums2_range = [num for num in nums2[:n]]
+        # merged_nums = nums1_range + nums2_range
+        # merged_nums.sort()
+        # nums1[:m + n] = merged_nums
+
+        # Solution 2:
+        merged = sorted(nums1[:m] + nums2)
+
+        for i in range(m + n):
+            nums1[i] = merged[i]
 
 
-nums1 = [-1, 0, 2, 3, 0, 0, 0]
+nums1 = [1, 2, 3, 0, 0, 0]
 nums2 = [2, 5, 6]
 m = 3
 n = 3
