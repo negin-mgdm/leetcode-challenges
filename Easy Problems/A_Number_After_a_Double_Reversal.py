@@ -24,6 +24,8 @@ Constraints:
 0 <= num <= 106
 '''
 
+# Solution 1:
+
 
 class Solution(object):
     def isSameAfterReversals(self, num):
@@ -49,5 +51,30 @@ class Solution(object):
 
 
 num = 1300
+solution = Solution()
+print(solution.isSameAfterReversals(num))
+
+
+# Soluution 2:
+
+
+class Solution(object):
+    def isSameAfterReversals(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        s1 = str(num)
+        reversed_num1 = s1[::-1]
+        result1 = int(reversed_num1)
+
+        s2 = str(result1)
+        reversed_num2 = s2[::-1]
+        result2 = int(reversed_num2)
+
+        return num == result2
+
+
+num = 526
 solution = Solution()
 print(solution.isSameAfterReversals(num))
