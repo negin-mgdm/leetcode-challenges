@@ -33,8 +33,10 @@ class Solution(object):
         :rtype: List[int]
         """
         ans = []
-        for i in nums:
-            ans.append(nums[i])
+
+        for num in nums:
+            ans.append(nums[num])
+
         return ans
 
 
