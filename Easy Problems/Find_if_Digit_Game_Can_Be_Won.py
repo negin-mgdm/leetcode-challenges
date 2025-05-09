@@ -29,6 +29,8 @@ Constraints:
 1 <= nums[i] <= 99
 '''
 
+# Solution 1:
+
 
 class Solution(object):
     def canAliceWin(self, nums):
@@ -52,5 +54,30 @@ class Solution(object):
 
 
 nums = [5, 5, 5, 25]
+solution = Solution()
+print(solution.canAliceWin(nums))
+
+
+# Solution 2:
+
+class Solution(object):
+    def canAliceWin(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        double_digits = 0
+        single_digits = 0
+
+        for num in nums:
+            if num < 10:
+                single_digits += num
+            else:
+                double_digits += num
+
+        return double_digits != single_digits
+
+
+nums = [1, 2, 3, 4, 5, 14]
 solution = Solution()
 print(solution.canAliceWin(nums))
