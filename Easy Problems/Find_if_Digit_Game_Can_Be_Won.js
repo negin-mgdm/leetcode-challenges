@@ -29,6 +29,9 @@ Constraints:
 1 <= nums[i] <= 99
 */
 
+
+// Solution 1:
+
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -54,3 +57,21 @@ var canAliceWin = function (nums) {
 
 let nums = [1, 2, 3, 4, 10];
 console.log(canAliceWin(nums));
+
+// Solution 2:
+
+var canAliceWin = function (nums) {
+    let doubleDigits = 0;
+    let singleDigits = 0;
+
+    for (let num of nums) {
+        if (num < 10) {
+            singleDigits += num;
+        } else {
+            doubleDigits += num;
+        }
+    }
+    return singleDigits != doubleDigits
+};
+
+
