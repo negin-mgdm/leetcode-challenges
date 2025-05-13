@@ -19,9 +19,9 @@ Output: ["h","a","n","n","a","H"]
  */
 var reverseString = function (s) {
     s.reverse();
-    console.log(s);
 };
 
 
-var s = ["H", "e", "l", "l", "o"];
+let s = ["H", "e", "l", "l", "o"];
 reverseString(s);
+console.log(s);
