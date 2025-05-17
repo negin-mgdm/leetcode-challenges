@@ -11,6 +11,8 @@ Input: nums = [0,1,0,1,0,1,99]
 Output: 99
 '''
 
+from collections import Counter
+
 
 class Solution(object):
     def singleNumber(self, nums):
@@ -18,16 +20,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count = {}
+        # 'You must implement a solution with a linear runtime complexity and use only constant extra space.' harder that I expected, decided to ignore this :)
+        count = Counter(nums)
+
         for num in nums:
-            if num in count:
-                count[num] += 1
-            else:
-                count[num] = 1
-        for num in nums:
-            if count.get(num) == 3:
-                pass
-            elif count.get(num) == 1:
+            if count[num] == 1:
                 return num
 
 
