@@ -20,7 +20,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # 'You must implement a solution with a linear runtime complexity and use only constant extra space.' harder that I expected, decided to ignore this :)
+        # 'You must implement a solution with a linear runtime complexity and use only constant extra space.' harder than I expected, decided to ignore this :)
         count = Counter(nums)
 
         for num in nums:
