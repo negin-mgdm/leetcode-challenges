@@ -31,7 +31,7 @@ Output:
 | 90          | Alice   | Sales       | 11096  |
 | 9           | Tatiana | Engineering | 33805  |
 +-------------+---------+-------------+--------+
-Explanation: 
+Explanation:
 Only the first 3 rows are displayed.
 '''
 
