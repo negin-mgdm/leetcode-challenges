@@ -34,14 +34,11 @@ Constraints:
 
 class Solution:
     def maxProduct(self, n: int) -> int:
-        number = [int(digit) for digit in str(n)]
-        max_product = 0
+        number = sorted(str(n))
+        max_product = 1
 
-        for i in range(len(number)):
-            for j in range(i + 1, len(number)):
-                product = number[i] * number[j]
-                if product > max_product:
-                    max_product = product
+        max_product *= int(number[-1])
+        max_product *= int(number[-2])
 
         return max_product
 
