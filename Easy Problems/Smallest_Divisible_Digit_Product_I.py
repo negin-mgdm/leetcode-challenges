@@ -21,15 +21,15 @@ Constraints:
 
 
 class Solution:
-    def smallestNumber(self, n: int, t: int) -> int:
-        def product_calculator(n):
-            product = 1
-            for digit in str(n):
-                product *= int(digit)
-            return product
+    def product_calculator(self, n):
+        product = 1
+        for digit in str(n):
+            product *= int(digit)
+        return product
 
+    def smallestNumber(self, n: int, t: int) -> int:
         while True:
-            result = product_calculator(n)
+            result = self.product_calculator(n)
             if result % t == 0:
                 return n
             else:
