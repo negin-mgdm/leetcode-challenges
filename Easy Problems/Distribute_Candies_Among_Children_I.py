@@ -21,10 +21,10 @@ Constraints:
 class Solution:
     def distributeCandies(self, n: int, limit: int) -> int:
         valid_variations = []
-        for i in range(0, n + 1):
-            for j in range(0, n + 1):
-                for k in range(0, n + 1):
-                    if i + j + k == n and not (i > limit) and not (j > limit) and not (k > limit):
+        for i in range(0, limit + 1):
+            for j in range(0, limit + 1):
+                for k in range(0, limit + 1):
+                    if i + j + k == n:
                         valid_variations.append((i, j, k))
         return len(valid_variations)
 
