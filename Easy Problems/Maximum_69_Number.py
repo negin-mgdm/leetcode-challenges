@@ -29,16 +29,9 @@ num consists of only 6 and 9 digits.
 '''
 
 
-class Solution(object):
-    def maximum69Number(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
-        num_str = str(num)
-        # Replace the first occurrence of "6" with "9".
-        max_69_num = num_str.replace("6", "9", 1)
-        return int(max_69_num)
+class Solution:
+    def maximum69Number(self, num: int) -> int:
+        return int(str(num).replace("6", "9", 1))
 
 
 num = 9669
