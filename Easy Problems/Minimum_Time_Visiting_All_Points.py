@@ -29,6 +29,9 @@ points[i].length == 2
 '''
 
 
+from typing import List
+
+
 class Solution:
     def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
         total_time = 0
@@ -49,3 +52,8 @@ class Solution:
             i += 1
 
         return total_time
+
+
+points = [[1, 1], [3, 4], [-1, 0]]
+solution = Solution()
+print(solution.minTimeToVisitAllPoints(points))
