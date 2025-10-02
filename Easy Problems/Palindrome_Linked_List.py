@@ -27,7 +27,7 @@ class ListNode:
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         strList = ""
-        cur = first
+        cur = head
         while cur:
             strList += str(cur.val)
             cur = cur.next
