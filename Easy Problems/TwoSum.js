@@ -30,14 +30,33 @@ Only one valid answer exists.
  * @param {number} target
  * @return {number[]}
  */
+// var twoSum = function (nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = 0; j < nums.length; j++) {
+//             if (nums[i] + nums[j] == target && i != j) {
+//                 return [i, j];
+//             }
+//         }
+//     }
+// };
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
 var twoSum = function (nums, target) {
+    let lookup = {};
     for (let i = 0; i < nums.length; i++) {
-        for (let j = 0; j < nums.length; j++) {
-            if (nums[i] + nums[j] == target && i != j) {
-                return [i, j];
-            }
+        const num = nums[i];
+        const complement = target - num;
+        if (lookup.hasOwnProperty(complement)) {
+            return [lookup[complement], i];
         }
+        lookup[num] = i;
     }
+    return [];
 };
 
 let nums = [2, 7, 11, 15];
