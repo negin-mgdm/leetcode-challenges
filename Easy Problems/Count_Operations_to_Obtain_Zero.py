@@ -28,26 +28,15 @@ Constraints:
 '''
 
 
-class Solution(object):
-    def countOperations(self, num1, num2):
-        """
-        :type num1: int
-        :type num2: int
-        :rtype: int
-        """
+class Solution:
+    def countOperations(self, num1: int, num2: int) -> int:
         counter = 0
         while num1 != 0 and num2 != 0:
-            if num1 > num2:
+            if num1 >= num2:
                 num1 -= num2
-                counter += 1
-            elif num2 > num1:
-                num2 -= num1
-                counter += 1
             else:
-                num1 = 0
-                num2 = 0
-                counter += 1
-
+                num2 -= num1
+            counter += 1
         return counter
 
 
